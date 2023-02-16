@@ -1,0 +1,16 @@
+cr 0 a.c
+cr 1 b.c
+cr 127 c.c
+cr 128 d.c
+cr 129 e.c
+cr 256 f.c
+cr 257 g.c
+ls
+pc a.c
+pc b.c
+pc c.c
+pc d.c
+pc e.c
+pc f.c
+pc g.c
+qu

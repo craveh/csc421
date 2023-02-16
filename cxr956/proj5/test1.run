@@ -1,0 +1,33 @@
+wr a a
+wr b bb
+wr c ccc
+wr d dddd
+wr e eeeee
+rm b
+rm d
+ls
+dd
+cr 0 b
+cr 0 d
+dd
+wr first abcdefghijklmnopqrstuvwxzy0123456789
+pc first
+ls
+dd
+rm b
+rm d
+wr second ABCDEFGHIJKLMONPQRSTUVWXYZ0123456789
+pc second
+dd
+rd a
+rd c
+rd first
+rd second
+ls
+
+
+
+
+
+
+

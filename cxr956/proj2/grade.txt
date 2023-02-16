@@ -1,0 +1,35 @@
+class: csc421-231
+project: proj2
+student: cxr956 
+date:
+
+grade: 5/6
+late: 3 days
+
+passes basic test (#):		3/3
+passes extended test(%):	2/3
+lateness:		(0)/(4)
+
+
+(#)
+- passes basic test
+  * no input, snail smushes
+  * one keystroke correct
+  * two false and the third keystroke correct
+  
+(%)
+- passes extended test, code checked
+  * all statements on common data inside a lock
+    -1 one outside, -2 several outside
+  * data handling
+    -1 strcpy into char guess
+    -1 other string copy problems
+
+commit:
+r306 | cxr956 | 2022-10-13 19:34:30 -0400 (Thu, 13 Oct 2022) | 1 line
+
+
+comments:
+
+35: board_string = board_draw(board_string, &board_g);
+

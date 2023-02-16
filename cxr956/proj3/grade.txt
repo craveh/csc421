@@ -1,0 +1,24 @@
+class: csc421-231
+project: proj3
+student: cxr956 
+date:
+
+grade: 4/4
+late: 2 days
+
+passes basic test (#):		2/2
+passes extended test(%):	2/2
+lateness:		(0)/(4)
+
+
+(#)
+- passes basic test
+  
+(%)
+- passes extended test, code checked
+
+commit:
+r417 | cxr956 | 2022-11-02 17:26:43 -0400 (Wed, 02 Nov 2022) | 1 line
+
+
+comments:

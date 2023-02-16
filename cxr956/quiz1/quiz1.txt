@@ -1,0 +1,12 @@
+quiz: 1
+date-out: 12 Sep 2021
+date-due: 16 Sep 2021
+name:
+grade: 5/5
+
+Watch https://techchannel.att.com/playvideo/2014/01/27/ATT-Archives-The-UNIX-System-Making-Computers-Easier-to-Use
+Write below the following line, a single, 5 sentence paragraph, of some interesting concept presented in the video.
+
+-------
+I found the video very interesting, since the history of UNIX is not something that I am very familiar with. The video gave me a very clear definition of what an operating system is - a collection of programs which makes the computer seem more simple so that software can be created more easily, which is something that I found helpful. It was also interesting to see how they were working with UNIX programs; I found the spellcheck example program particularly interesting. Seeing them work through how a program can be built from other programs and running them can be made easier using pipelines helped to contextualize what I've learned about UNIX in CSC 322. Overall, this video gave me insight into how the UNIX commands I often use are created, and it made me grateful for the people in Bell Labs who created the UNIX operating system.
+

@@ -1,0 +1,22 @@
+cr 129 a.c
+cr 129 b.c
+cr 129 c.c
+ls
+pc a.c
+pc b.c
+pc c.c
+rm b.c
+cr 126 d.c
+cr 130 e.c
+cr 513 f.c
+rm a.c
+ls
+pc d.c
+pc e.c
+rm e.c
+pc f.c
+rm f.c
+cr 514 g.c
+ls
+pc g.c
+qu

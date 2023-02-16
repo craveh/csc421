@@ -1,0 +1,63 @@
+class: csc421-231
+project: proj1
+student: cxr956 
+date:
+
+grade: 3/5
+late: 0 days
+
+passes basic test (#):		3/3
+passes extended test(%):	0/2
+lateness:		(0)/(4)
+
+
+(#)
+- passes basic test
+	makefile test
+
+(%)
+- passes extended test 
+	makefile-ext ext-test
+
+commit:
+r152 | cxr956 | 2022-09-19 17:37:31 -0400 (Mon, 19 Sep 2022) | 1 line
+
+
+comments:
+
+make -fMakefile-test trunc
+head -n`grep -ns "comments:" grade.txt  | sed 's/:.*//'` grade.txt > grade_t.txt
+head: 29: No such file or directory
+make[2]: *** [trunc] Error 1
+make[1]: *** [test-clean] Error 2
+***
+*** basic test
+***
+./my-word-count   my-word-count.h > my-word-count.out
+cat my-word-count.out >> grade.txt 2>&1
+      14      27     191
+diff ../../class/proj1/my-word-count.ref my-word-count.out >> grade.txt 2>&1
+***
+*** passed the basic test
+***
+***
+*** first extended test
+***
+./my-word-count -l -w Makefile > my-word-count.out
+cat my-word-count.out >> grade.txt 2>&1
+      76     242
+diff ../../class/proj1/makefile-wc.ref my-word-count.out >> grade.txt 2>&1
+1c1
+<       41     104
+---
+>       76     242
+make[1]: *** [ext-test1] Error 1
+***
+*** second extended testn***
+./my-word-count -llllllllllll Makefile  > my-word-count.out
+diff ../../class/proj1/my-word-count-lll.ref my-word-count.out >> grade.txt 2>&1>> grade.txt 2>&1
+1c1
+<       41
+---
+>       76
+make[1]: *** [ext-test2] Error 1

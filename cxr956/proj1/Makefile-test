@@ -1,0 +1,65 @@
+#
+# Makefile for pipe-test, csc421.231
+#
+# last-update:
+# 	4 sep 2022 -bjr:
+#
+
+F= my-word-count
+FILENAME= $F.h
+VERBOSE=
+OPTIONS=
+#OPTIONS= -lm
+
+RED= \033[0;31m
+GREEN= \033[0;32m
+NC= \033[0m
+
+M= Makefile-test
+
+all:
+	make $F
+
+$F: $F.c $F.h
+	cc -o $@ $< 
+
+run: $F
+	./$F ${VERBOSE} ${OPTIONS} ${FILENAME}
+
+trunc:
+	head -n`grep -ns "comments:" grade.txt  | sed 's/:.*//'` grade.txt > grade_t.txt
+	mv grade_t.txt grade.txt
+
+test-clean:
+	make -f$M trunc
+	make -f$M clean
+
+basic-test: $F
+	@echo "***\n*** basic test\n***" >> grade.txt 2>&1
+	./$F ${VERBOSE} ${OPTIONS} ${FILENAME} > $F.out
+	cat $F.out >> grade.txt 2>&1
+	diff ../../class/proj1/my-word-count.ref $F.out >> grade.txt 2>&1
+	@echo "***\n*** passed the basic test\n***" >> grade.txt 2>&1
+
+ext-test1: $F
+	@echo "***\n*** first extended test\n***" >> grade.txt 2>&1
+	./$F -l -w Makefile > $F.out
+	cat $F.out >> grade.txt 2>&1
+	diff ../../class/proj1/makefile-wc.ref $F.out >> grade.txt 2>&1
+	@echo "***\n*** passed first extended test\n***" >> grade.txt 2>&1
+	
+ext-test2: $F
+	@echo "***\n*** second extended test$\n***" >> grade.txt 2>&1
+	./$F -llllllllllll Makefile  > $F.out
+	diff ../../class/proj1/my-word-count-lll.ref $F.out >> grade.txt 2>&1>> grade.txt 2>&1
+	@echo "***\n*** passed second extended test\n***" >> grade.txt 2>&1
+
+all-tests:
+	-make -f $M test-clean >> grade.txt 2>&1
+	-make -f $M basic-test >> grade.txt 2>&1
+	-make -f $M ext-test1 >> grade.txt 2>&1
+	-make -f $M ext-test2 >> grade.txt 2>&1
+
+clean:
+	-rm $F $F.out
+

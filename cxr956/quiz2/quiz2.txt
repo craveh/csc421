@@ -1,0 +1,82 @@
+QUIZ 2
+
+Name: Hannah Raveh
+Grade:
+
+Date out: 26 sept
+Date due: 30 sept
+
+
+1a: 1/1
+1b: 1/1
+2a: 1/1
+2b: 1/1
+2c: 1/1
+3:  2/2
+4:  2/2
+5:  2/2
+E:  _/2
+
+late: _/(0)
+
+1a) Although different mechanisms might be involved to implement the hierarchy,
+   I have schedulable tasks in a priority hierarchy. Please list for me that
+   hierarchy. 
+
+    Interrupt tasks
+    Kernel tasks
+    Real time tasks
+    Interactive tasks
+    Compute-bound tasks
+    Batch tasks
+    Idle tasks
+
+1b) What is prioritized by the priority of this list.
+
+   Interrupt, Kernel, and Real time tasks take precedence over other tasks since they are time critical tasks.
+
+2) Give a short defintion of the three basic concepts for scheduling:
+   a- concurrency - the execution of the multiple tasks at the same time via process threads runnning in parallel
+   b- efficiency - the CPU use is maximized, and there is minimal waiting time. The scheduling of tasks should be effecient
+   c- latency - the amount of time elapsed between when task becomes ready to run and when the task gets time on the processor
+   
+3) Among the types of scheduling classes are preemptible tasks and run-to-completion
+   tasks. Explain the difference, with a sample reason a task would be of one class
+   or another. 
+
+   Run to completion tasks are real-time class threads, which means that the thread will not be removed from the CPU until it exits or yields, or a higher priority thread in the class becomes ready, or a thread from a higher priority class becomes ready. 
+
+   Preemptible tasks are tasks that during their execution, they may be interrupted and than later resumed.
+
+   Interrupt tasks are typically run to completion tasks and are not preemptible. If a hardware issue causes an interrupt, that issue must first be resolved completely, before any other tasks can be executed. In contrast, computation intensive tasks are often preemptible, since they are typically not high priority, allowing the CPU to preempt them.
+
+4) Some tasks run in user-contest, and some in system context. Explain what these
+   contexts are and give an example task that runs in each of the contexts.
+
+   User context:
+
+   That the kernel can work on behalf of a process, according to information specific to the data contained in the Process Control Block, is called the user context. There are as many user contexts as there are processes. Threads get system services by system calls that break into the kernel. The user context of the thread, now running kernel code and with kernel permissions, must be maintained, so that the requested service can be carried out according to information interpreted in the proper process context. 
+
+   If the kernel was entered by a syscall, it is most likely operating on behalf of the process. For instance, the process might have requested a write to a file. To carry out the write depends on the specifics of the process as captured by data in the process context. The kernel needs for the process to instruct it what is being written, where it is being written to, and how it is to be written. In this case, the kernel is said to be running in user context.
+   Asynchronous Procedure Calls (APC) run in the system context.
+
+   System context:
+
+   During an interrupt, the thread is taking care of some hardware event that is more likely than not, not related to the user program, since the interrupt could have occurred during any process. In this case, rather than referencing the user context, the thread handling the interrupt must assuredly ignore it. When running in the kernel, using kernel data structures, but being careful to ignore any information of data structures that are specific to a process, the thread is said to be running in system context.
+   Deferred Procedure Calls (DPC) run in the system context.
+   
+5) Considering interrupt tasks, what is the top and the bottom of the task, and why
+   are interrupt tasks divided this way? Give an example.
+
+   
+   The example can be something you suppose might be true but illustrates the 
+   concept. You do not need to find an actual, in code, example.
+
+   Is split into the top half and the bottom half of a task (defined below using Linux terminology), to allow interrupts to be resolved quickly. It's often the case that a lot of work must be done to resolve the interrupt, but interrupt handlers need to finish up quickly. The amount of work and the speed needed are why interrupt are broken up into two tasks: the top half and the bottom half.
+
+   Top half - the top half of an interrupt executes as soon as CPU receives the interrupt
+   Bottom half - the bottom half does the remaining work that was not performed by the interrupt handler or the top half
+
+   Example:
+   While receiving a packet of data, an interrupt occurs. The top half task of the interrupt works to resolve the interrupt and adds the bottom half task to a work queue. At a later time, the bottom half task will execute and perform the relevant data processing on the packet that was received right before the interrupt.
+
