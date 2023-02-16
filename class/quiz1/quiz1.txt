@@ -1,0 +1,12 @@
+quiz: 1
+date-out: 12 Sep 2021
+date-due: 16 Sep 2021
+name:
+grade:
+
+Watch https://techchannel.att.com/playvideo/2014/01/27/ATT-Archives-The-UNIX-System-Making-Computers-Easier-to-Use
+Write below the following line, a single, 5 sentence paragraph, of some interesting concept presented in the video.
+
+-------
+
+

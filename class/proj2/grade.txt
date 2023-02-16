@@ -1,0 +1,32 @@
+class: csc421-231
+project: proj2
+student: 
+date:
+
+grade: _/6
+late:
+
+passes basic test (#):		_/3
+passes extended test(%):	_/3
+lateness:		(0)/(4)
+
+
+(#)
+- passes basic test
+  * no input, snail smushes
+  * one keystroke correct
+  * two false and the third keystroke correct
+  
+(%)
+- passes extended test, code checked
+  * all statements on common data inside a lock
+    -1 one outside, -2 several outside
+  * data handling
+    -1 strcpy into char guess
+    -1 other string copy problems
+
+commit:
+
+
+comments:
+
